@@ -1,0 +1,28 @@
+.navigation-bar {
+    height: 3rem;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    margin: 0;
+    padding: 30px 0;
+    background-color: #394159;
+    color: #09e4c6;
+}
+
+.navigation-bar>a {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation-bar>a.active {
+    color: #09e4c6;
+}
+
+.navigation-bar>a.active::before,
+.navigation-bar>a.active::after {
+    content: url(../../../public/LightingLogo.svg);
+    display: inline-block;
+    margin: 5px;
+}

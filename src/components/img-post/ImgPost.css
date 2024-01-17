@@ -1,0 +1,12 @@
+.image-container {
+    border: 1px solid white;
+    display: flex;
+    width: 200px;
+    height: 150px;
+    color: aliceblue;
+}
+
+.userImg {
+    width: 100%;
+    background-color: #6e6af5;
+}
