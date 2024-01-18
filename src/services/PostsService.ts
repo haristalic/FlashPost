@@ -6,7 +6,7 @@ export class PostsService {
 
     public static getAllPosts(){
       let postUrl:string = `${this.URL}/posts`;
-      return axios.get<IPosts[]>(postUrl).then(response => response.data);
+      return axios.get<IPosts[]>(postUrl);
     }
 
     public static getAllCommentsFromPost(postID:number){

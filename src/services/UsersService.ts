@@ -5,6 +5,6 @@ export class UsersService {
 
   public static getAllUsers() {
     let userUrl: string = `${this.URL}/users`;
-    return axios.get<IUsers[]>(userUrl).then((response) => response.data);
+    return axios.get<IUsers[]>(userUrl);
   }
 }

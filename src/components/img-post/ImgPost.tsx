@@ -1,10 +1,14 @@
 import { IPhotos } from '../../models/IPhotos';
 import './ImgPost.css';
 
-export const ImgPost = (props: any) => {
+type Props = {
+  photos:IPhotos[];
+};
+
+export const ImgPost = ( { photos}:Props) => {
   return (
     <>
-      {props.photos.map((photo: IPhotos) => (
+      {photos.map((photo: IPhotos) => (
         <img
           key={photo.id}
           src={photo.url}

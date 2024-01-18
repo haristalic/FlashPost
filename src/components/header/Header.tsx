@@ -1,8 +1,8 @@
-import { ChangeEvent, useState } from 'react';
+import Reat,{ ChangeEvent, useState } from 'react';
 import './Header.css';
 import { NavLink } from 'react-router-dom';
 
-const Header = (props:any) => {
+const Header = (props: { setInput: (arg0: any) => void; input: string | number | readonly string[] | undefined; }) => {
    const handleInputChange = (e: any) => {
     props.setInput(e.target.value);
    };

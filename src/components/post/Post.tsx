@@ -81,7 +81,7 @@ const Post = (props: ICombinedData) => {
       {openModal && (
         <PostModal
           name={props.name}
-          tittle={props.title}
+          title={props.title}
           body={props.body}
           closeModal={setOpenModal}
         />

@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import { Pagination } from '../../components/pagination/Pagination';
-import { ImgPost } from '../../components/img-post/ImgPost';
-import { IPhotos, IPhotosState } from '../../models/IPhotos';
-import { PhotosService } from '../../services/PhotosService';
+import { useEffect, useState } from "react";
+import { Pagination } from "../../components/pagination/Pagination";
+import { ImgPost } from "../../components/img-post/ImgPost";
+import { IPhotos, IPhotosState } from "../../models/IPhotos";
+import { PhotosService } from "../../services/PhotosService";
 
 const ImagePage = () => {
   const [photosState, setPhotosState] = useState<IPhotosState>({
     loading: false,
     photos: [] as IPhotos[],
-    errorMsg: '',
+    errorMsg: "",
   });
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -42,19 +42,24 @@ const ImagePage = () => {
   ) as IPhotos[];
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-  const changeNumberOfPhotosPerPage = (photoNumber:number) => setphotosPerPage(photoNumber);
+  const changeNumberOfPhotosPerPage = (photoNumber: number) =>
+    setphotosPerPage(photoNumber);
 
   return (
     <>
-      <div className="posts-container img-post">
-        <ImgPost photos={currentPhotos} />
-      </div>
-      <Pagination
-        photosPerPage={photosPerPage}
-        totalPhotos={photos.length}
-        paginate={paginate}
-        changeNumberOfPhotosPerPage={changeNumberOfPhotosPerPage}
-      />
+      {!loading && (
+        <>
+          <div className="posts-container img-post">
+            <ImgPost photos={currentPhotos} />
+          </div>
+          <Pagination
+            photosPerPage={photosPerPage}
+            totalPhotos={photos.length}
+            paginate={paginate}
+            changeNumberOfPhotosPerPage={changeNumberOfPhotosPerPage}
+          />
+        </>
+      )}
     </>
   );
 };

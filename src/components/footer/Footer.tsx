@@ -1,12 +1,12 @@
-import React from 'react';
 import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
   FaGithub,
   FaRegCopyright,
-} from 'react-icons/fa';
-import './Footer.css';
+} from "react-icons/fa";
+import "./Footer.css";
+
 const Footer = () => {
   return (
     <div className="footer-container">

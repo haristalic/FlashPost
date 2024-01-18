@@ -9,7 +9,7 @@ import { forkJoin } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 import { ICombinedData } from "../../models/ICombinedData";
 
-const HomePage = (props: any) => {
+const HomePage = (props: { input: string; }) => {
   const [combinedDataState, setCombinedData] = useState<ICombinedData[]>([]);
 
   const [usersState, setUsersState] = useState<IUserState>({
@@ -31,8 +31,8 @@ const HomePage = (props: any) => {
       setUsersState({ ...usersState, loading: true });
       setPostsState({ ...postsState, loading: true });
 
-      const users$ = UsersService.getAllUsers();
-      const posts$ = PostsService.getAllPosts();
+      const users$ = UsersService.getAllUsers().then((response) => response.data);
+      const posts$ = PostsService.getAllPosts().then((response) => response.data);
 
       const combined$ = forkJoin({
         users: users$,

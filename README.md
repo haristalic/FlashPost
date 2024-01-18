@@ -1,8 +1,10 @@
+  ![Logo](https://github.com/haristalic/FlashPost/blob/master/public/Logo.svg?raw=true)
 
 ## FashPost
 
 `FlashPost` is  web aplication built with `React`,designed to showcase a  selection of  posts for users to explore. The seamless navigation and routing within the app are powered by the latest version of `React Router 6`. 
 
+![Screenshot](https://github.com/haristalic/FlashPost/blob/master/public/flashposthome.png?raw=true)
 
 ## Tech Stack
 
